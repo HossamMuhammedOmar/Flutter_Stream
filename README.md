@@ -81,3 +81,36 @@ void main() {
     );
 }
 ```
+
+* Login Validator
+
+![Capture](https://user-images.githubusercontent.com/49618856/97796095-a18a8480-1c16-11eb-8a32-bfe0cd5a5db0.PNG)
+```dart
+import 'dart:html';
+import 'dart:async';
+
+void main() {
+  
+  final InputElement input = querySelector('input'); 
+  final DivElement div = querySelector('div');
+  
+  final validator = new StreamTransformer
+    .fromHandlers(
+      handleData: (inputValue, sink) {
+        if(inputValue.contains('@')) {
+          sink.add(inputValue);
+        } else {
+          sink.addError('Enter a valid email');
+        }
+      } 
+    );
+  
+  input.onInput
+    .map((dynamic event) => event.target.value)
+    .transform(validator)
+    .listen(
+      (value) => div.innerHtml = '',
+      onError: (err) => div.innerHtml = err
+    );
+}
+```
