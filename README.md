@@ -1,5 +1,6 @@
 # Flutter Stream 
 
+* Factory Example
 ``` dart
 import 'dart:async';
 
