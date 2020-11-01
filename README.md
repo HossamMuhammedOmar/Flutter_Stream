@@ -60,3 +60,22 @@ void main() {
   );
 }
 ```
+
+* Guess Example
+```dart
+import 'dart:html';
+
+void main() {
+  final ButtonElement button = querySelector('button');
+  final InputElement input = querySelector('input');
+  
+  button.onClick
+    .take(4)
+    .where((event) => input.value == 'flutter')
+    .listen(
+      (event) => print('Congrats you got it!'),
+      onDone: () => print('BAD GUESSES MAN.')
+    );
+}
+```
+![Capture](https://user-images.githubusercontent.com/49618856/97795690-c0d2e300-1c11-11eb-8b52-8d87e398e22c.PNG)
