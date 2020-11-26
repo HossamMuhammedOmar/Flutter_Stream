@@ -1,4 +1,5 @@
 # Flutter Stream 
+![04-BLoC-diagram-1](https://user-images.githubusercontent.com/49618856/100374862-92c89f00-3015-11eb-96af-238d68e0fb9f.png)
 
 * Factory Example
 ``` dart
